@@ -1,1 +1,21 @@
-<p>home works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let recipe of recipes">
+      <div class="container-recipe">
+        <div class="recipe-image">
+          <img class="img-fluid" [src]="recipe.photoURL" [alt]="recipe.nume">
+        </div>
+        <span class="recipe-categ">Desert</span>
+        <h3 class="recipe-title">{{ recipe.nume }}</h3>
+        <div class="recipe-description">
+          <p>
+            {{ (recipe.descriere.length > 150) ? (recipe.descriere | slice:0:150)+' [...]':(recipe.descriere) }}
+          </p>
+        </div>
+        <div class="recipe-button">
+          <a class="button-custom">Vezi reteta</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
